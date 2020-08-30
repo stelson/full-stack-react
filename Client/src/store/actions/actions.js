@@ -1,6 +1,5 @@
 import * as ACTION_TYPES from './action_types'
 
-
 export const SUCCESS = {
   type: ACTION_TYPES.SUCCESS
 }
@@ -8,6 +7,7 @@ export const SUCCESS = {
 export const FAILURE = {
   type: ACTION_TYPES.FAILURE
 }
+
 
 export const success = () => {
   return {
@@ -21,18 +21,13 @@ export const failure = () => {
   }
 }
 
-export const add_profile = (profile) => {
+export const user_input = (text) => {
   return {
-    type: ACTION_TYPES.ADD_PROFILE,
-    payload: profile
+    type: ACTION_TYPES.USER_INPUT,
+    payload: text
   }
 }
 
-export const remove_profile = () => {
-  return {
-    type: ACTION_TYPES.REMOVE_PROFILE
-  }
-}
 
 export const login_success = () => {
   return {
@@ -47,17 +42,16 @@ export const login_failure = () => {
 }
 
 
-export const user_input_change = (text) => {
+export const add_profile = (profile) => {
   return {
-    type: ACTION_TYPES.USER_INPUT_CHANGE,
-    payload: text
+    type: ACTION_TYPES.ADD_PROFILE,
+    payload: profile
   }
 }
 
-export const user_input_submit = (text) => {
+export const remove_profile = () => {
   return {
-    type: ACTION_TYPES.USER_INPUT_SUBMIT,
-    payload: text
+    type: ACTION_TYPES.REMOVE_PROFILE
   }
 }
 
@@ -74,7 +68,7 @@ export const remove_db_profile = () => {
   }
 }
 
-export const set_db_posts = (posts) => {
+export const fetch_db_posts = (posts) => {
   return {
     type: ACTION_TYPES.FETCH_DB_POSTS,
     payload: posts
@@ -84,5 +78,19 @@ export const set_db_posts = (posts) => {
 export const remove_db_posts = () => {
   return {
     type: ACTION_TYPES.REMOVE_DB_POSTS
+  }
+}
+
+
+export const fetch_post_comments = (comments) => {
+  return {
+    type: ACTION_TYPES.FETCH_POST_COMMENTS,
+    payload: comments
+  }
+}
+
+export const remove_post_comments = () => {
+  return {
+    type: ACTION_TYPES.REMOVE_POST_COMMENTS
   }
 }

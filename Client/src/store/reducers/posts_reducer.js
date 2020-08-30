@@ -1,8 +1,8 @@
 import * as ACTION_TYPES from '../actions/action_types'
 
 export const initialState = {
-  posts: null,
-
+  posts: [],
+  comments: []
 }
 
 export const PostsReducer = (state = initialState, action) => {
@@ -17,8 +17,19 @@ export const PostsReducer = (state = initialState, action) => {
           ...state,
           posts: []
         }
-    
+      case ACTION_TYPES.FETCH_POST_COMMENTS:
+        return {
+          ...state,
+          comments: action.payload
+        }
+      case ACTION_TYPES.REMOVE_POST_COMMENTS:
+        return {
+          ...state,
+          comments: []
+        }
       default:
         return state
     }
 }
+
+export default PostsReducer
